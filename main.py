@@ -77,8 +77,8 @@ def main():
         df["walk_mode"] = df["walk_mode"].map(mapping_dict)
         features = df.columns[:len(df.columns)-2].tolist()
         features = reduce_features(df, features, variance_threshold=0.1, max_corr=0.8)
-        train_ml_model(df, features, unique_vals)
-        print_results(df, features)
+        model, true, pred = train_ml_model(df, features)
+        print_results(df, features, unique_vals, model, true, pred)
 
     elif args.model == "dl":
         root_dir = DATA_SET_FOLDER
@@ -87,6 +87,7 @@ def main():
         cols = PREFIXES[args.config]
         cols.append(grouping_col)
         df = pd.read_csv(os.path.join(root_dir, dataset))
+        df = df.dropna()
         df = df[cols]
         unique_vals = df["walk_mode"].unique()
         train_dl_model(df, grouping_col, unique_vals)

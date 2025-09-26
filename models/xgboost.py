@@ -7,7 +7,7 @@ from sklearn.metrics import accuracy_score, f1_score, recall_score, confusion_ma
 from utils.plot_confusion_matrix import plot_confusion_matrix
 from utils.plot_feature_importance import plot_feature_importance
 
-def train_ml_model(df, features, unique_vals):
+def train_ml_model(df, features):
     y = df["walk_mode"]
     label_encoder = LabelEncoder()
     y = label_encoder.fit_transform(y)
@@ -40,10 +40,9 @@ def train_ml_model(df, features, unique_vals):
     final_model = XGBClassifier(**best_params)
     final_model.fit(X_train, y_train)
     y_pred = final_model.predict(X_test)
-    plot_feature_importance(final_model, features)
-    plot_confusion_matrix(y_test, y_pred, unique_vals)
+    return final_model, y_test, y_pred
 
-def print_results(df, features):
+def print_results(df, features, unique_vals, model, true, pred):
     y = df["walk_mode"]
     label_encoder = LabelEncoder()
     y = label_encoder.fit_transform(y)
@@ -104,3 +103,5 @@ def print_results(df, features):
     print('Sensitivity standard deviation:', np.std(sensitivities))
     print('Mean specificity:', np.mean(specificities))
     print('Specificity standard deviation:', np.std(specificities))
+    plot_feature_importance(model, features)
+    plot_confusion_matrix(true, pred, unique_vals)
