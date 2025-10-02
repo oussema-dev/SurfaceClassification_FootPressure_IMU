@@ -1,6 +1,5 @@
 # Walking classification based on inertial measurement unit and foot pressure sensor data
 
-### Note: the steps to run the code in this repo were performed on a windows platform 
 
 - Download the dataset from https://springernature.figshare.com/collections/NEWBEE_A_Multi-Modal_Gait_Database_of_Natural_Everyday-Walk_in_an_Urban_Environment/5758997/1
 - Extract the downloaded data and put the `data_set` folder in the project root directory

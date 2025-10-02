@@ -52,6 +52,7 @@ def print_results(df, features, unique_vals, model, true, pred):
     sensitivities = []
     specificities = []
     for i in range(1, 10):
+        print ("Iteration", i)
         random.seed(i)
         random.shuffle(participants)
         train_percentage = 0.8
