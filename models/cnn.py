@@ -69,7 +69,7 @@ def train_dl(df, grouping_col, unique_vals, i):
         model.compile(optimizer=Adam(learning_rate=learning_rate), loss='categorical_crossentropy', metrics=['accuracy'])
         return model
 
-    tuner = RandomSearch(build_cnn, objective='val_accuracy', max_trials=5, directory='cnn_tuner', project_name='honda_project' + datetime.now().strftime("%Y%m%d-%H%M%S"))
+    tuner = RandomSearch(build_cnn, objective='val_accuracy', max_trials=5, directory='cnn_tuner', project_name='honda_project_' + datetime.now().strftime("%Y%m%d-%H%M%S"))
     tuner.search(X_train_full, y_train_full_cat, epochs=10, validation_split=0.2, class_weight=class_weights)
     model = tuner.get_best_models(1)[0]
     log_dir = os.path.join("logs", datetime.now().strftime("%Y%m%d-%H%M%S"))
@@ -78,8 +78,7 @@ def train_dl(df, grouping_col, unique_vals, i):
     y_pred = np.argmax(model.predict(X_test), axis=1)
     print("Classification Report:\n",
           classification_report(y_test, y_pred, target_names=le.classes_))
-    labels = np.unique(y_test)
-    acc, f1, sensitivity, specificity = compute_metrics(y_test, y_pred, labels)
+    acc, f1, sensitivity, specificity = compute_metrics(y_test, y_pred)
     if (i==10):
         plot_confusion_matrix(y_test, y_pred, unique_vals)
 
@@ -91,17 +90,10 @@ def train_dl_model(df, grouping_col, unique_vals):
     sensitivities = []
     specificities = []
     for i in range(10):
-        print ("Iteration", i)
+        print ("Iteration", i+1)
         acc, f1, sensitivity, specificity = train_dl(df, grouping_col, unique_vals, i+1)
         accuracies.append(acc)
         f1_scores.append(f1)
         sensitivities.append(sensitivity)
         specificities.append(specificity)
-    print('Mean accuracy:', np.mean(accuracies))
-    print('Accuracy standard deviation:', np.std(accuracies))
-    print('Mean f1 score:', np.mean(f1_scores))
-    print('f1 score standard deviation:', np.std(f1_scores))
-    print('Mean sensitivity:', np.mean(sensitivities))
-    print('Sensitivity standard deviation:', np.std(sensitivities))
-    print('Mean specificity:', np.mean(specificities))
-    print('Specificity standard deviation:', np.std(specificities))
+    return accuracies, f1_scores, sensitivities, specificities

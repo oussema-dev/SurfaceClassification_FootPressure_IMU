@@ -3,10 +3,11 @@ import pandas as pd
 import os
 from preprocessing.preprocess import (check_synchronization, transform_orientation, segment_gaits, 
 trim_data, merge_data, update_segments, interpolate_data, calculate_features, combine_stat_features)
-from constants import DATA_SET_FOLDER, ML_DATA, PREFIXES, DL_DATA, GROUPING_COL
+from constants import DATA_SET_FOLDER, ML_DATA, PREFIXES, DL_DATA, GROUPING_COL, DATA_FILES
 from utils.feature_reduction import reduce_features
-from models.xgboost import train_ml_model, print_results
+from models.xgboost import train_ml_model
 from models.cnn import train_dl_model
+from utils.summarize_metrics import print_metrics
 
 def preprocess_data():
     check_synchronization()
@@ -58,7 +59,8 @@ def parse_arguments():
     return parser.parse_args()
 
 def check_files_and_preprocess(preprocess=None): 
-    if  preprocess:
+    all_files_present = all(os.path.exists(os.path.join(DATA_SET_FOLDER, f)) for f in DATA_FILES)
+    if  preprocess or all_files_present == False:
         print(f"Preprocessing data...")
         preprocess_data()
         print(f"Preprocessing finished successfully")
@@ -77,8 +79,7 @@ def main():
         df["walk_mode"] = df["walk_mode"].map(mapping_dict)
         features = df.columns[:len(df.columns)-2].tolist()
         features = reduce_features(df, features, variance_threshold=0.1, max_corr=0.8)
-        model, true, pred = train_ml_model(df, features)
-        print_results(df, features, unique_vals, model, true, pred)
+        accuracies, f1_scores, sensitivities, specificities = train_ml_model(df, features, unique_vals)
 
     elif args.model == "dl":
         root_dir = DATA_SET_FOLDER
@@ -90,7 +91,9 @@ def main():
         df = df.dropna()
         df = df[cols]
         unique_vals = df["walk_mode"].unique()
-        train_dl_model(df, grouping_col, unique_vals)
+        accuracies, f1_scores, sensitivities, specificities = train_dl_model(df, grouping_col, unique_vals)
+
+    print_metrics(accuracies, f1_scores, sensitivities, specificities)
     
 if __name__ == "__main__":
     main()

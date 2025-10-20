@@ -136,3 +136,10 @@ PREFIXES = {
 
 DL_DATA = {"gait": "merged_gait_segmentation_interpolated.csv", "sw": "merged_sliding_window.csv"}
 GROUPING_COL = {"gait": "stepcount", "sw": "window_number"}
+
+DATA_FILES = [
+    "combined_stat_freq_features(gait cycles).csv", 
+    "combined_stat_freq_features(sliding window).csv", 
+    "merged_gait_segmentation_interpolated.csv",
+    "merged_sliding_window.csv"
+]
