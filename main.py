@@ -32,16 +32,14 @@ def parse_arguments():
     
     parser.add_argument(
         "--config", 
-        choices=["1", "2", "3", "4", "5", "6"], 
+        choices=["1", "2", "3", "4"], 
         required=True,
         help=(
             "Configuration options:\n"
             "1 = IMU_lower_limbs\n"
-            "2 = IMU_luo\n"
-            "3 = Pressure_insoles\n"
-            "4 = Pressure_insoles + IMU_lower_limbs\n"
-            "5 = Feet\n"
-            "6 = Normalized_pressure_insoles"
+            "2 = IMU_feet\n"
+            "3 = Normalized_pressure_insoles\n"
+            "4 = Pressure_insoles + IMUs"
         )
     )
     
