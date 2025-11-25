@@ -367,7 +367,7 @@ def calculate_statistical_features_sliding_window(folder_path):
     if 'stepcount' in df.columns:
         df = df.drop(columns=['stepcount'])
     # Invariant columns in the dataset (not features)
-    additional_columns = ['participant_id',  'walk_mode', '_original_index']
+    additional_columns = ['participant_id',  'walk_mode', '_original_index', 'task']
     
     count_any_na = df.isna().any(axis=1).sum()
     if count_any_na > 0:
@@ -463,7 +463,7 @@ def calculate_statistical_features_gait_cycles(folder_path):
     df = df[column_names + ['_original_index']]
 
     # Metadata columns to keep per group
-    additional_columns = ['participant_id', 'walk_mode', 'stepcount']
+    additional_columns = ['participant_id', 'walk_mode', 'stepcount', 'task']
 
     # Fill NaNs deterministically
     if df.isna().any().any():

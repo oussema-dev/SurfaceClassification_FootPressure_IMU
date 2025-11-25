@@ -17,6 +17,16 @@ COLUMNS_MERGED = [
     'Left_Heel_R_raw', 'Left_Heel_L_raw', 
     'Right_Heel_L_raw', 'Right_Heel_R_raw',
 
+    'Left_Hallux_norm', 'Right_Hallux_norm',
+    'Left_Toes_norm', 'Right_Toes_norm',
+    'Left_Met1_norm', 'Right_Met1_norm',
+    'Left_Met3_norm', 'Right_Met3_norm',
+    'Left_Met5_norm', 'Right_Met5_norm',
+    'Left_Arch_norm', 'Right_Arch_norm',
+    'Left_Heel_R_norm', 'Right_Heel_L_norm',
+    'Left_Heel_L_norm', 'Right_Heel_R_norm',
+    'Left_Max_Pressure_norm', 'Right_Max_Pressure_norm',
+
     "acceleration_Pelvis_x_local","acceleration_Pelvis_y_local","acceleration_Pelvis_z_local",
     "acceleration_RightForeArm_x_local","acceleration_RightForeArm_y_local","acceleration_RightForeArm_z_local",
     "acceleration_RightUpperLeg_x_local","acceleration_RightUpperLeg_y_local","acceleration_RightUpperLeg_z_local",
@@ -39,13 +49,13 @@ COLUMNS_MERGED = [
     "angularVelocity_LeftFoot_x_local","angularVelocity_LeftFoot_y_local","angularVelocity_LeftFoot_z_local",
     "angularVelocity_LeftToe_x_local","angularVelocity_LeftToe_y_local","angularVelocity_LeftToe_z_local",
 
-    'participant_id',  'walk_mode'
+    'participant_id',  'walk_mode', 'task'
 ]
 
 WINDOW_SIZE = 120
 STEP_SIZE = 60     
 
-METADATA_COLS = ['participant_id', 'walk_mode', 'stepcount']
+METADATA_COLS = ['participant_id', 'walk_mode', 'stepcount', 'task']
 
 ML_DATA = {"gait": "combined_stat_freq_features(gait cycles).csv", "sw": "combined_stat_freq_features(sliding window).csv"}
 
@@ -71,7 +81,7 @@ PREFIXES = {
             "angularVelocity_LeftFoot_x_local","angularVelocity_LeftFoot_y_local","angularVelocity_LeftFoot_z_local",
             "angularVelocity_LeftToe_x_local","angularVelocity_LeftToe_y_local","angularVelocity_LeftToe_z_local",
 
-            'participant_id',  'walk_mode'
+            'participant_id',  'walk_mode', 'task'
         ],
     "2": [
             "acceleration_Pelvis_x_local","acceleration_Pelvis_y_local","acceleration_Pelvis_z_local",
@@ -88,7 +98,7 @@ PREFIXES = {
             "angularVelocity_LeftUpperLeg_x_local","angularVelocity_LeftUpperLeg_y_local","angularVelocity_LeftUpperLeg_z_local",
             "angularVelocity_LeftLowerLeg_x_local","angularVelocity_LeftLowerLeg_y_local","angularVelocity_LeftLowerLeg_z_local",
 
-            'participant_id',  'walk_mode'
+            'participant_id',  'walk_mode', 'task'
         ],
     "3": [
             'Left_Hallux_raw', 'Right_Hallux_raw',
@@ -98,7 +108,7 @@ PREFIXES = {
             'Left_Arch_raw', 'Right_Arch_raw',
             'Left_Heel_R_raw', 'Left_Heel_L_raw', 
             'Right_Heel_L_raw', 'Right_Heel_R_raw',
-            'participant_id',  'walk_mode'
+            'participant_id',  'walk_mode', 'task'
         ],
     "4": [
             'Left_Hallux_raw', 'Right_Hallux_raw',
@@ -129,8 +139,34 @@ PREFIXES = {
             "angularVelocity_LeftFoot_x_local","angularVelocity_LeftFoot_y_local","angularVelocity_LeftFoot_z_local",
             "angularVelocity_LeftToe_x_local","angularVelocity_LeftToe_y_local","angularVelocity_LeftToe_z_local",
 
-            'participant_id',  'walk_mode'
-        ]
+            'participant_id',  'walk_mode', 'task'
+        ],
+    "5": [
+            "acceleration_RightFoot_x_local","acceleration_RightFoot_y_local","acceleration_RightFoot_z_local",
+            "acceleration_RightToe_x_local","acceleration_RightToe_y_local","acceleration_RightToe_z_local",
+            "acceleration_LeftFoot_x_local","acceleration_LeftFoot_y_local","acceleration_LeftFoot_z_local",
+            "acceleration_LeftToe_x_local","acceleration_LeftToe_y_local","acceleration_LeftToe_z_local",
+
+            "angularVelocity_RightFoot_x_local","angularVelocity_RightFoot_y_local","angularVelocity_RightFoot_z_local",
+            "angularVelocity_RightToe_x_local","angularVelocity_RightToe_y_local","angularVelocity_RightToe_z_local",
+            "angularVelocity_LeftFoot_x_local","angularVelocity_LeftFoot_y_local","angularVelocity_LeftFoot_z_local",
+            "angularVelocity_LeftToe_x_local","angularVelocity_LeftToe_y_local","angularVelocity_LeftToe_z_local",
+
+            'participant_id',  'walk_mode', 'task'
+        ],
+    "6": [
+            'Left_Hallux_norm', 'Right_Hallux_norm',
+            'Left_Toes_norm', 'Right_Toes_norm',
+            'Left_Met1_norm', 'Right_Met1_norm',
+            'Left_Met3_norm', 'Right_Met3_norm',
+            'Left_Met5_norm', 'Right_Met5_norm',
+            'Left_Arch_norm', 'Right_Arch_norm',
+            'Left_Heel_R_norm', 'Right_Heel_L_norm',
+            'Left_Heel_L_norm', 'Right_Heel_R_norm',
+            'Left_Max_Pressure_norm', 'Right_Max_Pressure_norm',
+            
+            'participant_id',  'walk_mode', 'task'
+        ],
 
 }
 

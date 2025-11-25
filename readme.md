@@ -29,6 +29,8 @@ Choose the dataset configuration:
 - `2` → IMU_luo  
 - `3` → Pressure_insoles  
 - `4` → Pressure_insoles + IMU_lower_limbs  
+- `5` → Feet  
+- `6` → Normalized_pressure_insoles  
 
 ### `--segmentation` (required)  
 Specify the segmentation method:  
