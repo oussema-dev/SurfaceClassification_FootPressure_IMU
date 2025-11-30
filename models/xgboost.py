@@ -1,15 +1,11 @@
 import random
 from sklearn.model_selection import GridSearchCV, StratifiedGroupKFold
-from sklearn.preprocessing import LabelEncoder
 from xgboost import XGBClassifier
 from utils.compute_metrics import compute_metrics
 from utils.plot_confusion_matrix import plot_confusion_matrix
 from utils.plot_feature_importance import plot_feature_importance
 
 def train_ml_model(df, features, unique_vals):
-    y = df["walk_mode"]
-    label_encoder = LabelEncoder()
-    y = label_encoder.fit_transform(y)
     participants = df["participant_id"].unique()
     accuracies = []
     f1_scores = []
@@ -25,8 +21,8 @@ def train_ml_model(df, features, unique_vals):
         test_participants = participants[num_train:]
         train_set = df[df["participant_id"].isin(train_participants)]
         test_set = df[df["participant_id"].isin(test_participants)]
-        X_train, y_train = train_set[features], train_set["walk_mode"]
-        X_test, y_test = test_set[features], test_set["walk_mode"]
+        X_train, y_train = train_set[features], train_set["walk_mode"].astype(int)
+        X_test, y_test = test_set[features], test_set["walk_mode"].astype(int)
         param_grid = {
             "learning_rate": [0.1],
             "max_depth": [3, 5],

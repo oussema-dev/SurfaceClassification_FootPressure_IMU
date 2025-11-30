@@ -91,6 +91,8 @@ def main():
         df = df.dropna()
         df = df[cols]
         unique_vals = df["walk_mode"].unique()
+        mapping_dict = {val: idx for idx, val in enumerate(unique_vals)}
+        df["walk_mode"] = df["walk_mode"].map(mapping_dict)
         accuracies, f1_scores, sensitivities, specificities = train_dl_model(df, grouping_col, unique_vals)
 
     print(f1_scores)
