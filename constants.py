@@ -69,7 +69,7 @@ PREFIXES = {
 
             "angularVelocity_RightFoot_x_local","angularVelocity_RightFoot_y_local","angularVelocity_RightFoot_z_local",
             "angularVelocity_LeftFoot_x_local","angularVelocity_LeftFoot_y_local","angularVelocity_LeftFoot_z_local",
-
+            
             'participant_id',  'walk_mode', 'task'
         ],
     "3": [
@@ -86,6 +86,12 @@ PREFIXES = {
             'participant_id',  'walk_mode', 'task'
         ],
     "4": [
+            "acceleration_RightFoot_x_local","acceleration_RightFoot_y_local","acceleration_RightFoot_z_local",
+            "acceleration_LeftFoot_x_local","acceleration_LeftFoot_y_local","acceleration_LeftFoot_z_local",
+
+            "angularVelocity_RightFoot_x_local","angularVelocity_RightFoot_y_local","angularVelocity_RightFoot_z_local",
+            "angularVelocity_LeftFoot_x_local","angularVelocity_LeftFoot_y_local","angularVelocity_LeftFoot_z_local",
+
             'Left_Hallux_norm', 'Right_Hallux_norm',
             'Left_Toes_norm', 'Right_Toes_norm',
             'Left_Met1_norm', 'Right_Met1_norm',
@@ -95,27 +101,9 @@ PREFIXES = {
             'Left_Heel_R_norm', 'Right_Heel_L_norm',
             'Left_Heel_L_norm', 'Right_Heel_R_norm',
             'Left_Max_Pressure_norm', 'Right_Max_Pressure_norm',
-
-            "acceleration_Pelvis_x_local","acceleration_Pelvis_y_local","acceleration_Pelvis_z_local",
-            "acceleration_RightUpperLeg_x_local","acceleration_RightUpperLeg_y_local","acceleration_RightUpperLeg_z_local",
-            "acceleration_RightLowerLeg_x_local","acceleration_RightLowerLeg_y_local","acceleration_RightLowerLeg_z_local",
-            "acceleration_RightFoot_x_local","acceleration_RightFoot_y_local","acceleration_RightFoot_z_local",
-            "acceleration_LeftUpperLeg_x_local","acceleration_LeftUpperLeg_y_local","acceleration_LeftUpperLeg_z_local",
-            "acceleration_LeftLowerLeg_x_local","acceleration_LeftLowerLeg_y_local","acceleration_LeftLowerLeg_z_local",
-            "acceleration_LeftFoot_x_local","acceleration_LeftFoot_y_local","acceleration_LeftFoot_z_local",
-
-            "angularVelocity_Pelvis_x_local","angularVelocity_Pelvis_y_local","angularVelocity_Pelvis_z_local",
-            "angularVelocity_RightUpperLeg_x_local","angularVelocity_RightUpperLeg_y_local","angularVelocity_RightUpperLeg_z_local",
-            "angularVelocity_RightLowerLeg_x_local","angularVelocity_RightLowerLeg_y_local","angularVelocity_RightLowerLeg_z_local",
-            "angularVelocity_RightFoot_x_local","angularVelocity_RightFoot_y_local","angularVelocity_RightFoot_z_local",
-            "angularVelocity_LeftUpperLeg_x_local","angularVelocity_LeftUpperLeg_y_local","angularVelocity_LeftUpperLeg_z_local",
-            "angularVelocity_LeftLowerLeg_x_local","angularVelocity_LeftLowerLeg_y_local","angularVelocity_LeftLowerLeg_z_local",
-            "angularVelocity_LeftFoot_x_local","angularVelocity_LeftFoot_y_local","angularVelocity_LeftFoot_z_local",
-
+            
             'participant_id',  'walk_mode', 'task'
         ],
-
-
 }
 
 DL_DATA = {"gait": "merged_gait_segmentation_interpolated.csv", "sw": "merged_sliding_window.csv"}

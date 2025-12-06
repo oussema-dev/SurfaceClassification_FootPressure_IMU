@@ -27,8 +27,8 @@ Select the type of model to use:
 Choose the dataset configuration:  
 - `1` → IMU_lower_limbs  
 - `2` → IMU_feet  
-- `3` → Normalized_pressure_insoles 
-- `4` → Pressure_insoles + IMUs
+- `3` → Pressure_insoles 
+- `4` → Pressure_insoles + IMU_feet
 
 ### `--segmentation` (required)  
 Specify the segmentation method:  

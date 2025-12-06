@@ -38,8 +38,8 @@ def parse_arguments():
             "Configuration options:\n"
             "1 = IMU_lower_limbs\n"
             "2 = IMU_feet\n"
-            "3 = Normalized_pressure_insoles\n"
-            "4 = Pressure_insoles + IMUs"
+            "3 = Pressure_insoles\n"
+            "4 = Pressure_insoles + IMU_feet"
         )
     )
     
