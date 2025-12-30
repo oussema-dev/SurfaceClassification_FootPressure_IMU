@@ -1,5 +1,5 @@
-# Walking classification based on inertial measurement unit and foot pressure sensor data
-
+# Outdoor Walking Classification Based on Inertial Measurement Unit and Foot Pressure Sensor Data
+## Research paper available at https://doi.org/10.3390/s1010000
 
 - Download the dataset from https://springernature.figshare.com/collections/NEWBEE_A_Multi-Modal_Gait_Database_of_Natural_Everyday-Walk_in_an_Urban_Environment/5758997/1
 - Extract the downloaded data and put the `data_set` folder in the project root directory
@@ -27,8 +27,10 @@ Select the type of model to use:
 Choose the dataset configuration:  
 - `1` → IMU_lower_limbs  
 - `2` → IMU_feet  
-- `3` → Pressure_insoles 
-- `4` → Pressure_insoles + IMU_feet
+- `3` → IMU_pelvis
+- `4` → Pressure_insoles 
+- `5` → Pressure_insoles + IMU_feet
+- `6` → Pressure_insoles + IMU_pelvis
 
 ### `--segmentation` (required)  
 Specify the segmentation method:  

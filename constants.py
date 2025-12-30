@@ -69,10 +69,36 @@ PREFIXES = {
 
             "angularVelocity_RightFoot_x_local","angularVelocity_RightFoot_y_local","angularVelocity_RightFoot_z_local",
             "angularVelocity_LeftFoot_x_local","angularVelocity_LeftFoot_y_local","angularVelocity_LeftFoot_z_local",
-            
+
             'participant_id',  'walk_mode', 'task'
         ],
     "3": [
+            "acceleration_Pelvis_x_local","acceleration_Pelvis_y_local","acceleration_Pelvis_z_local",
+
+            "angularVelocity_Pelvis_x_local","angularVelocity_Pelvis_y_local","angularVelocity_Pelvis_z_local",
+
+            'participant_id',  'walk_mode', 'task'
+        ],
+    "4": [
+            'Left_Hallux_norm', 'Right_Hallux_norm',
+            'Left_Toes_norm', 'Right_Toes_norm',
+            'Left_Met1_norm', 'Right_Met1_norm',
+            'Left_Met3_norm', 'Right_Met3_norm',
+            'Left_Met5_norm', 'Right_Met5_norm',
+            'Left_Arch_norm', 'Right_Arch_norm',
+            'Left_Heel_R_norm', 'Right_Heel_L_norm',
+            'Left_Heel_L_norm', 'Right_Heel_R_norm',
+            'Left_Max_Pressure_norm', 'Right_Max_Pressure_norm',
+
+            'participant_id',  'walk_mode', 'task'
+        ],
+    "5": [
+            "acceleration_RightFoot_x_local","acceleration_RightFoot_y_local","acceleration_RightFoot_z_local",
+            "acceleration_LeftFoot_x_local","acceleration_LeftFoot_y_local","acceleration_LeftFoot_z_local",
+
+            "angularVelocity_RightFoot_x_local","angularVelocity_RightFoot_y_local","angularVelocity_RightFoot_z_local",
+            "angularVelocity_LeftFoot_x_local","angularVelocity_LeftFoot_y_local","angularVelocity_LeftFoot_z_local",
+
             'Left_Hallux_norm', 'Right_Hallux_norm',
             'Left_Toes_norm', 'Right_Toes_norm',
             'Left_Met1_norm', 'Right_Met1_norm',
@@ -85,12 +111,10 @@ PREFIXES = {
             
             'participant_id',  'walk_mode', 'task'
         ],
-    "4": [
-            "acceleration_RightFoot_x_local","acceleration_RightFoot_y_local","acceleration_RightFoot_z_local",
-            "acceleration_LeftFoot_x_local","acceleration_LeftFoot_y_local","acceleration_LeftFoot_z_local",
+    "6": [
+            "acceleration_Pelvis_x_local","acceleration_Pelvis_y_local","acceleration_Pelvis_z_local",
 
-            "angularVelocity_RightFoot_x_local","angularVelocity_RightFoot_y_local","angularVelocity_RightFoot_z_local",
-            "angularVelocity_LeftFoot_x_local","angularVelocity_LeftFoot_y_local","angularVelocity_LeftFoot_z_local",
+            "angularVelocity_Pelvis_x_local","angularVelocity_Pelvis_y_local","angularVelocity_Pelvis_z_local",
 
             'Left_Hallux_norm', 'Right_Hallux_norm',
             'Left_Toes_norm', 'Right_Toes_norm',
