@@ -21,7 +21,7 @@ cd to the root folder and run the following commands:
 ### `--model` (required)  
 Select the type of model to use:  
 - `ml` → Machine Learning–based model (XGBoost) 
-- `dl` → Deep Learning–based model (1-D CNN)
+- `dl` → Deep Learning–based model (Hybrid CNN-LSTM)
 
 ### `--config` (required)  
 Choose the dataset configuration:  
