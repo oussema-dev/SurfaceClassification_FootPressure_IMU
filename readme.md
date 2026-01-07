@@ -1,5 +1,5 @@
 # Outdoor Walking Classification Based on Inertial Measurement Unit and Foot Pressure Sensor Data
-## Research paper available at https://doi.org/10.3390/s1010000
+## Research paper available at [https://doi.org/10.3390/s1010000](https://www.mdpi.com/1424-8220/26/1/232)
 
 - Download the dataset from https://springernature.figshare.com/collections/NEWBEE_A_Multi-Modal_Gait_Database_of_Natural_Everyday-Walk_in_an_Urban_Environment/5758997/1
 - Extract the downloaded data and put the `data_set` folder in the project root directory
